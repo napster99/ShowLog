@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="format-detection" content="address=no">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/component.css">
+  <link rel="stylesheet" href="../css/font-icon.css">
+  <link rel="stylesheet" href="../css/style.css">
+
+  <title>报名俱乐部</title>
+  <style type="text/css">
+      .bedits span{
+        display:block;margin:0 auto;width:35%;height:2.4rem;text-align:center;color:#555;border:1px solid #64b1f8;border-radius:3px;line-height: 2.4rem;
+      }
+  </style>
+</head>
+<body>
+   
+<div class="getop">
+  <div class="gim">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+      <tr>
+        <td width="80px"><img src="../images/tou.jpg"></td>
+        <td width="7%">&nbsp;</td>
+        <td width="70%">江湖行者</td>
+        
+      </tr>
+     </table>
+
+  </div>
+  <img src="../images/fbg.jpg">   
+</div>
+<!--头部结束-->      
+ <div class="b_ming">
+   梦在前方，也许就是彼岸，路在脚下。一步也是成功。<br>
+   兴趣 : 探险  摄影  爬山  游泳  绘画  极限  篮球  足球
+ </div> 
+ <div class="fzhu"><span class="se5">粉丝 <span id="fansCount">468</span></span>&nbsp;&nbsp;|&nbsp;&nbsp;<span class="se4">关注 100</span></div>
+ <div class="bedits"><span status="no" id="followBtn">关注</span></div>
+
+<!--我的活动开始-->
+<div class="ge_con">
+   <div class="ge_bt">我的活动：</div>
+   <ul id="huodongList">
+      <li><img src="../images/hpic1.jpg"><span>城市5公里马拉松比赛</span></li>
+      <li><img src="../images/hpic2.jpg"><span>户外自行车比赛</span></li>
+      <li><img src="../images/hpic3.jpg"><span>厦门第三季冲浪大赛</span></li>
+      <li><img src="../images/hpic4.jpg"><span>户外社团登山徒步</span></li>
+      <li><img src="../images/hpic1.jpg"><span>城市5公里马拉松比赛</span></li>
+      <li><img src="../images/hpic2.jpg"><span>户外自行车比赛</span></li>
+      <li><img src="../images/hpic3.jpg"><span>厦门第三季冲浪大赛</span></li>
+      <li><img src="../images/hpic4.jpg"><span>户外社团登山徒步</span></li>
+   </ul>
+</div>
+<!--我的活动结束-->
+</body>
+
+<script src="../script/api.js"></script>
+<script src="../script/zepto.min.js"></script>
+<script src="../script/common.js"></script>
+<script>
+  apiready = function() {
+
+
+
+    $('.bedit').on('tap', function() {
+      api.openWin({
+        name: 'scan',
+        url: './my/scan.html',
+        bounces :false
+      });
+    });
+
+    $('#huodongList').on('tap',  'li', function() {
+        api.openWin({
+          'name' : 'activityDetail',
+          'url' : './index/activityDetail_frame.html',
+          'bounces':false,
+        }) 
+    });
+
+    $('#followBtn').on('tap',  function() {
+        var fansCount = Number($('#fansCount').text());
+        var status = $(this).attr('status');
+        if(status === 'no') {
+          //关注   
+          $(this).text('取消关注').attr('status','yes').css('border','1px solid #ccc');
+          $('#fansCount').text(fansCount+1);
+        }else{
+          //取消关注
+
+          $(this).text('关注').attr('status','no').css('border','1px solid #64b1f8');
+          $('#fansCount').text(fansCount === 1 ? 0 : fansCount - 1);
+        }
+    });
+
+
+
+  }
+</script>
+</html>

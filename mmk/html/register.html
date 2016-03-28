@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="format-detection" content="address=no">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/component.css">
+  <link rel="stylesheet" href="../css/font-icon.css">
+  <link rel="stylesheet" href="../css/style.css">
+  
+  <title>注册</title>
+  <style>
+   
+
+  </style>
+</head>
+<body>
+   <div class="d_com">
+       <div class="b_tab">
+           <table width="90%" border="0" cellspacing="0" cellpadding="0" align="center">
+              <tr>
+                <td align="center" class="se4"><img src="../images/dlo.jpg"></td>
+             </tr>
+             <tr>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td><input class="d_srk" name="" type="text" placeholder="请输入账号"></td>
+              </tr>
+              <tr>
+                <td><span class="se3">*&nbsp;输入字母、数字、下划线　任意组合</span></td>
+              </tr>
+              <tr>
+                <td><input class="d_srk" name="" type="text" placeholder="请输入邮箱"></td>
+              </tr>
+              <tr>
+                <td><span class="se3">*&nbsp;填写常用的邮箱</span></td>
+              </tr>
+              <tr>
+                <td><input class="d_srk" name="" type="text" placeholder="请输入密码"></td>
+              </tr>
+              <tr>
+                <td><span class="se1">*&nbsp;密码错误</span></td>
+              </tr>
+              <tr>
+                <td><input class="d_srk" name="" type="text" placeholder="请输入确认密码"></td>
+              </tr>
+              <tr>
+                <td><span class="se1">*&nbsp;密码不一致</span></td>
+              </tr>              
+              <tr>
+                <td align="center"><input class="fk" name="" type="checkbox" value="">阅读并同意<span class="se4">《注册条款》</span></td>
+              </tr>
+            </table>
+            <span class="lbtn" id="sure">注册</span>
+        </div>
+    </div>
+    <!--底部导航-->
+    <div class="dfoot">版权所有@2015 报名俱乐部</div>
+</body>
+<script src="../script/api.js"></script>
+<script src="../script/zepto.min.js"></script>
+<script src="../script/swipe/swipe.js"></script>
+<script src="../script/common.js"></script>
+<script>
+
+  apiready = function() {
+
+    // 设置ios7的标题栏字体变亮，全局用一个就行了
+    api.setStatusBarStyle({
+      style: 'dark'
+    });
+
+    api.addEventListener({
+      name:'viewappear'
+    },function(ret,err){
+      // 设置ios7的标题栏字体变亮，全局用一个就行了
+      api.setStatusBarStyle({
+        style: 'dark'
+      });
+    });
+
+    $('#sure').on('tap',  function() {
+      api.closeToWin({'name' : 'root'});
+    })
+
+  }
+
+</script>
+</html>
