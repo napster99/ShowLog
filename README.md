@@ -1,4 +1,4 @@
 ## installation
 
-npm install ShowLog
+npm install showlog
 
